@@ -1,0 +1,48 @@
+{
+  "name": "image",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "location": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "date_taken": {
+      "type": "date"
+    },
+    "imageurl": {
+      "type": "string"
+    },
+    "likes": {
+      "type": "number"
+    },
+    "tags": {
+      "type": "number"
+    },
+    "comments": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

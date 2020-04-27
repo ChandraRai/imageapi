@@ -8,6 +8,10 @@
 module.exports = function(server) {
   // Install a `/` route that returns server status
   const router = server.loopback.Router();
-  router.get('/', server.loopback.status());
+  // router.get('/', server.loopback.status());
+  router.get('/', function(req, res) {
+    res.json({'hello': 'world!', 'welcome to': 'imageapi',
+      'created_by': 'chandra', 'time:': Date()});
+  });
   server.use(router);
 };
