@@ -31,4 +31,10 @@ module.exports = function(Image) {
     accepts: {arg: 'id', type: 'any'},
     returns: {arg: 'isFree', type: 'boolean'}
   });
+
+  // Add validation
+  Image.validatesNumericalityOf('likes', {int: true});
+  Image.validate('likes', function(err) {
+    if (this.likes < 3) err();
+  }, {message: 'Must be a positive number.'});
 };
