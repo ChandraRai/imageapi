@@ -7,7 +7,6 @@
 
 const loopback = require('loopback');
 const boot = require('loopback-boot');
-
 const express = require('express');
 const multer = require('multer');
 const path = require('path');

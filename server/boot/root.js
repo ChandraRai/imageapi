@@ -11,7 +11,7 @@ module.exports = function(server) {
   // router.get('/', server.loopback.status());
   router.get('/', function(req, res) {
     res.json({'hello': 'world!', 'welcome to': 'imageapi',
-      'created_by': 'chandra', 'time:': Date()});
+      'created_by': 'Chandra', 'time:': Date()});
   });
   server.use(router);
 };
