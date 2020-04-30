@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = function(Image) {
-
   // Operation hook
   Image.observe('before save', function(context, next) {
     if (context.instance) context.instance.updated = new Date();
@@ -29,12 +28,6 @@ module.exports = function(Image) {
 
   Image.remoteMethod('isFree', {
     accepts: {arg: 'id', type: 'any'},
-    returns: {arg: 'isFree', type: 'boolean'}
+    returns: {arg: 'isFree', type: 'boolean'},
   });
-
-  // Add validation
-  Image.validatesNumericalityOf('likes', {int: true});
-  Image.validate('likes', function(err) {
-    if (this.likes < 3) err();
-  }, {message: 'Must be a positive number.'});
 };

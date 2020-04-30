@@ -18,9 +18,6 @@
     "date_taken": {
       "type": "date"
     },
-    "imageurl": {
-      "type": "string"
-    },
     "likes": {
       "type": "number"
     },
@@ -32,6 +29,10 @@
     },
     "updated": {
       "type": "date"
+    }
+    ,
+    "imageurl": {
+      "type": "string"
     }
   },
   "validations": [],

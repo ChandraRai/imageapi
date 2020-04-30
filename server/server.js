@@ -8,7 +8,36 @@
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
+
 const app = module.exports = loopback();
+
+// image storage
+const storage = multer.diskStorage({
+  destination: './upload',
+  filename: (req, file, cb)=> {
+  // eslint-disable-next-line max-len
+    return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
+  },
+});
+
+// upload
+const upload = multer({
+  storage: storage,
+});
+
+app.use('/imageurl', express.static('./upload'));
+// route
+// eslint-disable-next-line max-len
+app.post('/api/images/upload', upload.single('image_file'), (req, res) => {
+  res.json({
+    success: 1,
+    imageurl: `http://localhost:3000/imageurl/${req.file.filename}`,
+  });
+  console.log(req.file);
+});
 
 app.start = function() {
   // start the web server
