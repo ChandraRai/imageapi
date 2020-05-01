@@ -29,7 +29,7 @@ const upload = multer({
   storage: storage,
 });
 
-app.use('/imageurl', express.static('./upload'));
+// app.use('/imageurl', express.static('./upload'));
 // route
 // eslint-disable-next-line max-len
 app.post('/api/images/upload', upload.single('image_file'), (req, res) => {
