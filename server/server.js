@@ -15,8 +15,8 @@ const app = module.exports = loopback();
 
 // image storage
 const storage = multer.diskStorage({
-  // destination: './upload',
-  destination: 'https://imageapis.herokuapp.com/imageurl',
+  destination: './upload',
+  // destination: 'https://imageapis.herokuapp.com/imageurl',
   filename: (req, file, cb)=> {
   // eslint-disable-next-line max-len
     return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
@@ -34,7 +34,7 @@ app.use('/imageurl', express.static('./upload'));
 app.post('/api/images/upload', upload.single('image_file'), (req, res) => {
   res.json({
     success: 1,
-    imageurl: `http://localhost:3000/imageurl/${req.file.filename}`,
+    imageurl: `https://imageapis.herokuapp.com/imageurl/${req.file.filename}`,
   });
 });
 
