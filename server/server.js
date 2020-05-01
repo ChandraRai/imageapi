@@ -15,9 +15,8 @@ const app = module.exports = loopback();
 
 // image storage
 const storage = multer.diskStorage({
-  // for local folder
   // destination: './upload',
-  destination: 'https://imageapis.herokuapp.com/upload',
+  destination: 'https://imageapis.herokuapp.com/imageurl',
   filename: (req, file, cb)=> {
   // eslint-disable-next-line max-len
     return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
