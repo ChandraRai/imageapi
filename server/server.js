@@ -29,10 +29,10 @@ const upload = multer({
   storage: storage,
 });
 
-// app.use('/imageurl', express.static('./upload'));
+app.use('/imageurl', express.static('./upload'));
 // route
 // eslint-disable-next-line max-len
-app.post('/api/images/upload', upload.single('image_file'), (req, res) => {
+app.post('/api/images/upload', upload.single('imagefile'), (req, res) => {
   res.json({
     success: 1,
     imageurl: `https://imageapis.herokuapp.com/imageurl/${req.file.filename}`,
