@@ -15,6 +15,7 @@ const app = module.exports = loopback();
 
 // image storage
 const storage = multer.diskStorage({
+  // for local
   destination: './upload',
   // destination: 'https://imageapis.herokuapp.com/imageurl',
   filename: (req, file, cb)=> {
