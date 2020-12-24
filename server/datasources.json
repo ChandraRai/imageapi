@@ -4,8 +4,8 @@
     "connector": "memory"
   },
   "mongodb": {
-    "host": "ds215502.mlab.com",
-    "port": 15502,
+    "host": "mongodb+srv://nikhil:Test123@imageapi.pdvml.mongodb.net/imagedb?retryWrites=true&w=majority",
+    "port": 27017,
     "database": "imagedb",
     "password": "Test123",
     "name": "mongodb",
