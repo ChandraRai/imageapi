@@ -4,8 +4,9 @@
     "connector": "memory"
   },
   "mongodb": {
-    "host": "mongodb+srv://nikhil:Test123@imageapi.pdvml.mongodb.net/imagedb?retryWrites=true&w=majority",
+    "host": "imageapi.pdvml.mongodb.net",
     "port": 27017,
+    "url": "mongodb+srv://nikhil:Test123@imageapi.pdvml.mongodb.net/imagedb?retryWrites=true&w=majority",
     "database": "imagedb",
     "password": "Test123",
     "name": "mongodb",
